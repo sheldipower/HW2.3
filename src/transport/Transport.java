@@ -46,6 +46,7 @@ private T driver;
      public abstract void startMove ();
 
     public abstract void finishMove ();
+    public abstract void printType ();
     @Override
     public String toString(){
         return "Марка: " + brand + " , "

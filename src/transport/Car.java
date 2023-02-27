@@ -1,8 +1,30 @@
 package transport;
 
 public class Car extends Transport <DriverB> {
-    public Car(String brand, String model, double engineVolume, DriverB driver) {
+    private Bodytype bodytype;
+
+
+
+    public Car(String brand, String model, double engineVolume, DriverB driver, Bodytype bodytype) {
         super(brand, model, engineVolume, driver);
+this.bodytype = bodytype;
+
+    }
+    public Bodytype getBodytype() {
+        return bodytype;
+    }
+
+    public void setBodytype(Bodytype bodytype) {
+        this.bodytype = bodytype;
+    }
+
+    @Override
+    public void printType() {
+        if (getBodytype() == null) {
+            System.out.println("Недостаточно данных");
+        } else {
+            System.out.println(getBodytype());
+        }
     }
 
     @Override

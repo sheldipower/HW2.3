@@ -14,7 +14,8 @@ public class Main {
                     "bus brand №" + i,
                     "bus model №" + i,
                     4.0,
-                    driverD);
+                    driverD,
+                    Size.XS);
             DriverB driverB = new DriverB
                     ("driver №" + i,
                             true,
@@ -23,7 +24,8 @@ public class Main {
                     "car brand №" + i,
                     "car model №" + i,
                     1.6,
-                    driverB);
+                    driverB,
+                    Bodytype.CROSSOVER);
             DriverC driverC = new DriverC
                     ("driver №" + i,
                             true,
@@ -32,7 +34,8 @@ public class Main {
                     "truck brand №" + i,
                     "truck model №" + i,
                     4.5,
-                    driverC);
+                    driverC,
+                    LoadCapacity.N2);
             printInfo(car);
             printInfo(bus);
             printInfo(truck);

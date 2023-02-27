@@ -1,10 +1,28 @@
 package transport;
 
 public class Truck extends Transport <DriverC> {
-    public Truck(String brand, String model, double engineVolume, DriverC driver) {
+    private LoadCapacity loadCapacity;
+    public Truck(String brand, String model, double engineVolume, DriverC driver, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume, driver);
+this.loadCapacity = loadCapacity;
     }
 
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
+    @Override
+    public void printType() {
+        if (getLoadCapacity() == null) {
+            System.out.println("Недостаточно данных");
+        } else {
+            System.out.println(getLoadCapacity());
+        }
+    }
     @Override
     public String toString() {
         return super.toString();

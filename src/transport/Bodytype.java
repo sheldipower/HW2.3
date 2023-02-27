@@ -11,3 +11,4 @@ public enum Bodytype {
         VAN,
         MINIVAN;
 }
+
