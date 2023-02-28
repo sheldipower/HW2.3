@@ -55,4 +55,13 @@ this.loadCapacity = loadCapacity;
         System.out.println("Махсимальная скорость грузовика" + maxSpeed);
 
     }
+    @Override
+    public void passDiagnostics () {
+        System.out.println("Требуется диагностика");
+    }
+    @Override
+    public  Type getType(){
+        return Type.TRUCK;
+
+    }
 }

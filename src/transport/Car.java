@@ -45,6 +45,9 @@ this.bodytype = bodytype;
     public void pitStop() {
         System.out.println("Пит стоп у машины ");
     }
+
+
+
     @Override
     public void theBestTime() {
         int minBound = 80;
@@ -58,6 +61,16 @@ this.bodytype = bodytype;
             int maxBound = 120;
             int maxSpeed = (int)(minBound +  (maxBound - minBound) * Math.random());
             System.out.println("Максимальная скорость машины " + maxSpeed);
+    }
+    @Override
+    public void passDiagnostics () {
+        System.out.println("Требуется диагностика");
+    }
+
+    @Override
+    public  Type getType(){
+        return Type.CAR;
+
     }
 
 }

@@ -52,4 +52,9 @@ public class Bus extends Transport <DriverD> {
         System.out.println("Максимальная скорость автобуса " + maxSpeed);
 
     }
+    @Override
+    public  Type getType(){
+        return Type.BUS;
+
+    }
 }
