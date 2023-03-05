@@ -57,4 +57,10 @@ public class Bus extends Transport <DriverD> {
         return Type.BUS;
 
     }
+
+    @Override
+    public boolean passDiagnostics () throws TransportTypeException{
+        throw new TransportTypeException ("Автобусы не должны проходить диагностику");
+
+    }
 }

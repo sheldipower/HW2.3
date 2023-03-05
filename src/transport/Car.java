@@ -63,8 +63,8 @@ this.bodytype = bodytype;
             System.out.println("Максимальная скорость машины " + maxSpeed);
     }
     @Override
-    public void passDiagnostics () {
-        System.out.println("Требуется диагностика");
+    public boolean passDiagnostics () {
+        {return isDiagnosticsPassed();}
     }
 
     @Override
