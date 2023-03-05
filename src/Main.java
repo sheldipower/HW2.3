@@ -40,23 +40,15 @@ public class Main {
                     LoadCapacity.N2);
 
             truck.setDiagnosticPassed(false);
-            try {
-                (bus, truck, car;)
+            try { bus.passDiagnostics();
+                car.passDiagnostics();
+                truck.passDiagnostics();
             } catch (TransportTypeException e) {
                 e.printStackTrace();
                 System.out.println(e.getMessage());
             }
-        } public static checkTransport(Transport...transports) throws TransportTypeException {
-            int count = 0;
-            for (Transport transport : transports) {
-                if (transport.passDiagnostics) {
-                    count++;
-                }
-            }
-            System.out.println("Диагностику прошли" + count + "из" + transports.length + "автомобилей");
+
+
         }
-
-
-
     }
 }
