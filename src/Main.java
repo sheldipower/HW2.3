@@ -16,6 +16,7 @@ public class Main {
                     4.0,
                     driverD,
                     Size.XS);
+            printInfo(bus);
             DriverB driverB = new DriverB
                     ("driver №" + i,
                             true,
@@ -25,7 +26,8 @@ public class Main {
                     "car model №" + i,
                     1.6,
                     driverB,
-                    Bodytype.CROSSOVER);
+                    Bodytype.TYPE6);
+            printInfo(car);
             DriverC driverC = new DriverC
                     ("driver №" + i,
                             true,
@@ -36,16 +38,33 @@ public class Main {
                     4.5,
                     driverC,
                     LoadCapacity.N2);
-            printInfo(car);
-            printInfo(bus);
             printInfo(truck);
+            truck.setDiagnosticPassed(false);
+            try {
+                (bus, truck, car);
+            } catch (TransportTypeException e) {
+                e.printStackTrace();
+                System.out.println(e.getMessage());
+            }
         }
 
-
+  public static checkTransport (Transport...transports) throws TransportTypeException {
+            int count = 0;
+            for (Transport transport : transports) {
+                if (transport.passDiagnostics) {
+                    count++;
+                }
+            }
+            System.out.println("Диагностику прошли"+ count+ "из"+transports.length + "автомобилей");
+        }
     }
+
+
 
     public static void printInfo(Transport <?> transport) {
         System.out.println(" водитель " + transport.getDriver().getName()+ " управляет автомобилем "  + transport.getBrand() + transport.getModel() +" и будет участвовать в заезде ");
     }
+
+
 
 }

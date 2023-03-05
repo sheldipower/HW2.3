@@ -56,8 +56,8 @@ this.loadCapacity = loadCapacity;
 
     }
     @Override
-    public void passDiagnostics () {
-        System.out.println("Требуется диагностика");
+    public boolean passDiagnostics () {
+        {return isDiagnosticsPassed();}
     }
     @Override
     public  Type getType(){
