@@ -1,5 +1,8 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
@@ -83,6 +86,15 @@ public abstract class Transport <T extends Driver> implements Competing {
                 count++;
             }
         }
+
+    }
+
+    public static void main(String[] args) {
+        ArrayList<String>mechanic =  new ArrayList<String>();
+        mechanic.add("Иванов Иван");
+        mechanic.add("Галустян Петр");
+        mechanic.add("Мария Макдалена");
+        mechanic.add("Константин Забенский");
 
     }
 }
