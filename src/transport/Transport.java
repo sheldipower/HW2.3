@@ -12,8 +12,7 @@ public abstract class Transport <T extends Driver> implements Competing {
     public Transport(String brand,
                      String model,
                      double engineVolume,
-                     T driver,
-                     String carList) {
+                     T driver) {
         if (brand == null || brand.isEmpty()) {
             brand = "default";
         }
