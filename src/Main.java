@@ -36,14 +36,19 @@ public class Main {
         carList.add(truck2);
         carList.add(truck3);
 
+        Mechanic mechanic1 = new Mechanic( "Зубров Дмитрий", "Самоделкин");
+        Mechanic mechanic2 = new Mechanic("Константинов Илья", "Диагностикс");
+        Mechanic mechanic3 = new Mechanic("Павлов Михаил", "Своя Компания");
+        List<Mechanic> mechanicList  = new ArrayList<>();
+        mechanicList.add(mechanic1);
+        mechanicList.add(mechanic2);
+        mechanicList.add(mechanic3);
+    }
 
 
 
-
-        }
     }
 
 
 
 
-}

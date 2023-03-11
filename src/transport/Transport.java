@@ -6,13 +6,15 @@ public abstract class Transport <T extends Driver> implements Competing {
     private final double engineVolume;
     private T driver;
     private boolean diagnosticPassed;
-    private String carList;
+    private T carList;
+    private String mechanicList;
 
 
     public Transport(String brand,
                      String model,
                      double engineVolume,
-                     T driver) {
+                     T driver,
+                     T carList) {
         if (brand == null || brand.isEmpty()) {
             brand = "default";
         }
@@ -29,11 +31,11 @@ public abstract class Transport <T extends Driver> implements Competing {
         this.carList = carList;
     }
 
-    public String getCarList() {
+    public T getCarList() {
         return carList;
     }
 
-    public void setCarList(String carList) {
+    public void setCarList(T carList) {
         this.carList = carList;
     }
 
