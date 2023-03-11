@@ -1,27 +1,19 @@
 package transport;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private final double engineVolume;
     private T driver;
     private boolean diagnosticPassed;
+    private String carList;
 
-    public boolean isDiagnosticPassed() {
-        return diagnosticPassed;
-    }
-
-    public void setDiagnosticPassed(boolean diagnosticPassed) {
-        this.diagnosticPassed = diagnosticPassed;
-    }
 
     public Transport(String brand,
                      String model,
                      double engineVolume,
-                     T driver) {
+                     T driver,
+                     String carList) {
         if (brand == null || brand.isEmpty()) {
             brand = "default";
         }
@@ -35,6 +27,15 @@ public abstract class Transport <T extends Driver> implements Competing {
         }
         this.engineVolume = engineVolume;
         setDriver(driver);
+        this.carList = carList;
+    }
+
+    public String getCarList() {
+        return carList;
+    }
+
+    public void setCarList(String carList) {
+        this.carList = carList;
     }
 
     public T getDriver() {
@@ -70,7 +71,9 @@ public abstract class Transport <T extends Driver> implements Competing {
     public boolean isDiagnosticsPassed() {
         return diagnosticPassed;
     }
-
+    public void setDiagnosticPassed(boolean diagnosticPassed) {
+        this.diagnosticPassed = diagnosticPassed;
+    }
     @Override
     public String toString() {
         return "Марка: " + brand + " , "
@@ -89,13 +92,5 @@ public abstract class Transport <T extends Driver> implements Competing {
 
     }
 
-    public static void main(String[] args) {
-        ArrayList<String>mechanic =  new ArrayList<String>();
-        mechanic.add("Иванов Иван");
-        mechanic.add("Галустян Петр");
-        mechanic.add("Мария Макдалена");
-        mechanic.add("Константин Забенский");
-
-    }
 }
 
