@@ -1,20 +1,26 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private final double engineVolume;
     private T driver;
     private boolean diagnosticPassed;
-    private T carList;
-    private String mechanicList;
+    private List <Transport> carList;
+     List <Mechanic> mechanics;
+
+
 
 
     public Transport(String brand,
                      String model,
                      double engineVolume,
                      T driver,
-                     T carList) {
+                     List <Mechanic> mechanics) {
+
         if (brand == null || brand.isEmpty()) {
             brand = "default";
         }
@@ -29,14 +35,16 @@ public abstract class Transport <T extends Driver> implements Competing {
         this.engineVolume = engineVolume;
         setDriver(driver);
         this.carList = carList;
+        this.mechanics = mechanics;
+
     }
 
     public T getCarList() {
-        return carList;
+        return (T) carList;
     }
 
     public void setCarList(T carList) {
-        this.carList = carList;
+        this.carList = (List<Transport>) carList;
     }
 
     public T getDriver() {
@@ -90,6 +98,7 @@ public abstract class Transport <T extends Driver> implements Competing {
                 count++;
             }
         }
+
 
     }
 

@@ -1,12 +1,14 @@
 package transport;
 
+import java.util.List;
+
 public class Car extends Transport <DriverB> {
     private Bodytype bodytype;
 
 
 
-    public Car(String brand, String model, double engineVolume, DriverB driver, Bodytype bodytype) {
-        super(brand, model, engineVolume, driver);
+    public Car(String brand, String model, double engineVolume, DriverB driver, Bodytype bodytype, List<Mechanic> mechanic) {
+        super(brand, model, engineVolume, driver, mechanic );
 this.bodytype = bodytype;
 
     }
@@ -63,7 +65,7 @@ this.bodytype = bodytype;
             System.out.println("Максимальная скорость машины " + maxSpeed);
     }
     @Override
-    public boolean passDiagnostics () {
+    public static boolean passDiagnostics() {
         {return isDiagnosticsPassed();}
     }
 
