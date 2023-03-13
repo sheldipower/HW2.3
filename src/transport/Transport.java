@@ -1,24 +1,26 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private final double engineVolume;
     private T driver;
     private boolean diagnosticPassed;
+    private List <Transport> carList;
+     private List <Mechanic> mechanics;
 
-    public boolean isDiagnosticPassed() {
-        return diagnosticPassed;
-    }
 
-    public void setDiagnosticPassed(boolean diagnosticPassed) {
-        this.diagnosticPassed = diagnosticPassed;
-    }
+
 
     public Transport(String brand,
                      String model,
                      double engineVolume,
-                     T driver) {
+                     T driver,
+                     List <Mechanic> mechanics) {
+
         if (brand == null || brand.isEmpty()) {
             brand = "default";
         }
@@ -32,6 +34,17 @@ public abstract class Transport <T extends Driver> implements Competing {
         }
         this.engineVolume = engineVolume;
         setDriver(driver);
+        this.carList = carList;
+        this.mechanics = mechanics;
+
+    }
+
+    public T getCarList() {
+        return (T) carList;
+    }
+
+    public void setCarList(T carList) {
+        this.carList = (List<Transport>) carList;
     }
 
     public T getDriver() {
@@ -67,7 +80,9 @@ public abstract class Transport <T extends Driver> implements Competing {
     public boolean isDiagnosticsPassed() {
         return diagnosticPassed;
     }
-
+    public void setDiagnosticPassed(boolean diagnosticPassed) {
+        this.diagnosticPassed = diagnosticPassed;
+    }
     @Override
     public String toString() {
         return "Марка: " + brand + " , "
@@ -84,6 +99,8 @@ public abstract class Transport <T extends Driver> implements Competing {
             }
         }
 
+
     }
+
 }
 
