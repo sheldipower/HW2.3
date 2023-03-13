@@ -1,10 +1,7 @@
 
 import transport.*;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -49,32 +46,35 @@ public class Main {
             carList.add(truck2);
             carList.add(truck3);
 
-            Queue<Transport> transportsQueue = new LinkedList<>();
-            transportsQueue.offer(truck1);
-            transportsQueue.offer(truck2);
-            transportsQueue.offer(truck3);
-            transportsQueue.offer(bus1);
-            transportsQueue.offer(bus2);
-            transportsQueue.offer(bus3);
-            transportsQueue.offer(car1);
-            transportsQueue.offer(car2);
-            transportsQueue.offer(car3);
-            System.out.println(transportsQueue.peek());
-            Transport town;
-            while ((town = transportsQueue.poll()) != null) {
-                System.out.println(town);
+        Queue<ServiceStation> transportsQueue = new LinkedList<>();
+        public void passDiagnostic() {
+            transportsQueue.add(truck1);
+            transportsQueue.add(truck2);
+            transportsQueue.add(truck3);
+            transportsQueue.add(bus1);
+            transportsQueue.add(bus2);
+            transportsQueue.add(bus3);
+            transportsQueue.add(car1);
+            transportsQueue.add(car2);
+            transportsQueue.add(car3);
 
-
-                Truck.setDiagnosticPassed(false);
-                try { Bus.passDiagnostics();
-                    Car.passDiagnostics();
-                    Truck.passDiagnostics();
-                } catch (TransportTypeException e) {
-                    e.printStackTrace();
-                    System.out.println(e.getMessage());
-                }
-
+            Iterator<ServiceStation> iterator = transportsQueue.iterator();
+            while (iterator.hasNext()) {
+                iterator.next();
+                iterator.remove();
             }
+
+        Truck.setDiagnosticPassed(false);
+        try { Bus.passDiagnostics();
+            Car.passDiagnostics();
+            Truck.passDiagnostics();
+        } catch (TransportTypeException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+
+
+
+        }
         }
         }
 

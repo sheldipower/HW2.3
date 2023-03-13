@@ -10,7 +10,7 @@ public abstract class Transport <T extends Driver> implements Competing {
     private T driver;
     private boolean diagnosticPassed;
     private List <Transport> carList;
-     List <Mechanic> mechanics;
+     private List <Mechanic> mechanics;
 
 
 
