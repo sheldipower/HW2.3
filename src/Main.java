@@ -46,35 +46,7 @@ public class Main {
             carList.add(truck2);
             carList.add(truck3);
 
-        Queue<ServiceStation> transportsQueue = new LinkedList<>();
-        public void passDiagnostic() {
-            transportsQueue.add(truck1);
-            transportsQueue.add(truck2);
-            transportsQueue.add(truck3);
-            transportsQueue.add(bus1);
-            transportsQueue.add(bus2);
-            transportsQueue.add(bus3);
-            transportsQueue.add(car1);
-            transportsQueue.add(car2);
-            transportsQueue.add(car3);
 
-            Iterator<ServiceStation> iterator = transportsQueue.iterator();
-            while (iterator.hasNext()) {
-                iterator.next();
-                iterator.remove();
-            }
-
-        Truck.setDiagnosticPassed(false);
-        try { Bus.passDiagnostics();
-            Car.passDiagnostics();
-            Truck.passDiagnostics();
-        } catch (TransportTypeException e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-
-
-
-        }
         }
         }
 

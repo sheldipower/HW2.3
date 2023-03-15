@@ -29,6 +29,12 @@ this.loadCapacity = loadCapacity;
     public String toString() {
         return super.toString();
     }
+
+    @Override
+    public void runCheckUp() throws TransportTypeException {
+
+    }
+
     @Override
     public void startMove(){
         System.out.println( "Грузовик марки " + getBrand() + " начал движение" );
@@ -57,6 +63,7 @@ this.loadCapacity = loadCapacity;
         System.out.println("Махсимальная скорость грузовика" + maxSpeed);
 
     }
+
     @Override
     public boolean passDiagnostics() {
         {return isDiagnosticsPassed();}
@@ -66,4 +73,9 @@ this.loadCapacity = loadCapacity;
         return Type.TRUCK;
 
     }
+    @Override
+    public boolean needGoDiagnostic () {
+        return true;
+    }
 }
+

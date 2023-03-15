@@ -74,6 +74,10 @@ this.bodytype = bodytype;
         return Type.CAR;
 
     }
+    @Override
+    public boolean needGoDiagnostic () {
+        return true;
+    }
 
 }
 
