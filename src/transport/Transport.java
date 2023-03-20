@@ -75,7 +75,7 @@ public abstract class Transport <T extends Driver> implements Competing {
 
     public abstract  Type getType();
 
-    abstract boolean  passDiagnostics() throws TransportTypeException;
+
 
     public boolean isDiagnosticsPassed() {
         return diagnosticPassed;
@@ -91,18 +91,11 @@ public abstract class Transport <T extends Driver> implements Competing {
 
     }
 
-    public static void checkTransport(Transport... transports) throws TransportTypeException {
-        int count = 0;
-        for (Transport transport : transports) {
-            if (transport.passDiagnostics()) {
-                count++;
-            }
-        }
 
 
-    }
 
-    public abstract void runCheckUp() throws TransportTypeException;
+
+
     public abstract boolean  needGoDiagnostic ();
 
 }

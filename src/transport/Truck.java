@@ -30,10 +30,7 @@ this.loadCapacity = loadCapacity;
         return super.toString();
     }
 
-    @Override
-    public void runCheckUp() throws TransportTypeException {
 
-    }
 
     @Override
     public void startMove(){
@@ -64,10 +61,7 @@ this.loadCapacity = loadCapacity;
 
     }
 
-    @Override
-    public boolean passDiagnostics() {
-        {return isDiagnosticsPassed();}
-    }
+
     @Override
     public  Type getType(){
         return Type.TRUCK;

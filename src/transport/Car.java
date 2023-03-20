@@ -2,7 +2,7 @@ package transport;
 
 import java.util.List;
 
-public class Car extends Transport <DriverB> {
+public  class Car extends Transport <DriverB> {
     private Bodytype bodytype;
 
 
@@ -64,10 +64,7 @@ this.bodytype = bodytype;
             int maxSpeed = (int)(minBound +  (maxBound - minBound) * Math.random());
             System.out.println("Максимальная скорость машины " + maxSpeed);
     }
-    @Override
-    public static boolean passDiagnostics() {
-        {return isDiagnosticsPassed();}
-    }
+
 
     @Override
     public  Type getType(){
@@ -78,7 +75,7 @@ this.bodytype = bodytype;
     public boolean needGoDiagnostic () {
         return true;
     }
-
+  
 }
 
 
