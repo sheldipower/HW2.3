@@ -1,9 +1,11 @@
 package transport;
 
+import java.util.List;
+
 public class Truck extends Transport <DriverC> {
     private LoadCapacity loadCapacity;
-    public Truck(String brand, String model, double engineVolume, DriverC driver, LoadCapacity loadCapacity) {
-        super(brand, model, engineVolume, driver);
+    public Truck(String brand, String model, double engineVolume, DriverC driver, LoadCapacity loadCapacity, List<Mechanic> mechasnics) {
+        super(brand, model, engineVolume, driver, mechasnics );
 this.loadCapacity = loadCapacity;
     }
 
@@ -27,6 +29,12 @@ this.loadCapacity = loadCapacity;
     public String toString() {
         return super.toString();
     }
+
+    @Override
+    public void runCheckUp() throws TransportTypeException {
+
+    }
+
     @Override
     public void startMove(){
         System.out.println( "Грузовик марки " + getBrand() + " начал движение" );
@@ -55,8 +63,9 @@ this.loadCapacity = loadCapacity;
         System.out.println("Махсимальная скорость грузовика" + maxSpeed);
 
     }
+
     @Override
-    public boolean passDiagnostics () {
+    public boolean passDiagnostics() {
         {return isDiagnosticsPassed();}
     }
     @Override
@@ -64,4 +73,9 @@ this.loadCapacity = loadCapacity;
         return Type.TRUCK;
 
     }
+    @Override
+    public boolean needGoDiagnostic () {
+        return true;
+    }
 }
+

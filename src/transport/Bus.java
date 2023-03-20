@@ -1,9 +1,11 @@
 package transport;
 
+import java.util.List;
+
 public class Bus extends Transport <DriverD> {
     private Size size;
-    public Bus(String brand, String model, double engineVolume, DriverD driver, Size size) {
-        super(brand, model, engineVolume, driver);
+    public Bus(String brand, String model, double engineVolume, DriverD driver, Size size, List<Mechanic> mechanics) {
+        super(brand, model, engineVolume, driver, mechanics );
         this.size = size;
     }
 
@@ -26,6 +28,12 @@ public class Bus extends Transport <DriverD> {
     public String toString() {
         return super.toString();
     }
+
+    @Override
+    public void runCheckUp() throws TransportTypeException {
+
+    }
+
     @Override
     public  void startMove(){
         System.out.println( "Автобус марки " + getBrand() + " начал движение" );
@@ -59,8 +67,13 @@ public class Bus extends Transport <DriverD> {
     }
 
     @Override
-    public boolean passDiagnostics () throws TransportTypeException{
-        throw new TransportTypeException ("Автобусы не должны проходить диагностику");
-
+    boolean passDiagnostics() throws TransportTypeException {
+        return false;
     }
+    @Override
+    public boolean needGoDiagnostic () {
+        return false;
+    }
+
+
 }
