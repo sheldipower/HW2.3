@@ -46,8 +46,8 @@ public class Main {
         carAndMechanic.put(truck2, mechanic2);
         carAndMechanic.put(truck3, mechanic3);
 
-        for (Map.Entry<Transport, Mechanic> transportMechanicEntry : carAndMechanic.entrySet()) {
-            System.out.println("Автомобиль: " + transportMechanicEntry.getKey() + " Механик:" + transportMechanicEntry.getValue());
+        for (Map.Entry<Transport, Mechanic> transportMechanic : carAndMechanic.entrySet()) {
+            System.out.println("Автомобиль: " + transportMechanic.getKey() + " Механик:" + transportMechanic.getValue());
         }
 
     }
