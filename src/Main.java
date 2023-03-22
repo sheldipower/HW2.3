@@ -34,7 +34,16 @@ public class Main {
         Truck truck1 = new Truck("Kamaz", "6511", 3.0, driverC1, LoadCapacity.N1, mechanics);
         Truck truck2 = new Truck("Gaz", "3308", 3.0, driverC2, LoadCapacity.N3, mechanics);
         Truck truck3 = new Truck("Nefaz", "4514", 3.0, driverC3, LoadCapacity.N2, mechanics);
-
+        List<Driver> drivers = new ArrayList<>();
+        drivers.add(driverB1);
+        drivers.add(driverB2);
+        drivers.add(driverB3);
+        drivers.add(driverC1);
+        drivers.add(driverC2);
+        drivers.add(driverC3);
+        drivers.add(driverD1);
+        drivers.add(driverD2);
+        drivers.add(driverD3);
         Map<Transport, Mechanic> carAndMechanic = new HashMap<>();
         carAndMechanic.put(car1, mechanic1);
         carAndMechanic.put(car2, mechanic2);
@@ -46,12 +55,22 @@ public class Main {
         carAndMechanic.put(truck2, mechanic2);
         carAndMechanic.put(truck3, mechanic3);
 
-        for (Map.Entry<Transport, Mechanic> transportMechanic : carAndMechanic.entrySet()) {
-            System.out.println("Автомобиль: " + transportMechanic.getKey() + " Механик:" + transportMechanic.getValue());
+        for (Map.Entry<Transport, Mechanic> transportMechanicEntry : carAndMechanic.entrySet()) {
+            System.out.println("Автомобиль: " + transportMechanicEntry.getKey() + " Механик:" + transportMechanicEntry.getValue());
         }
-
+        Set<Driver> driverSet = new HashSet<>();
+        for(Driver driver : drivers){
+            driverSet.add(driver);
+        }
+        Iterator <Driver> iterator = driverSet.iterator();
+        while (iterator.hasNext());
+        Driver driver = iterator.next();
+        System.out.println(driver);
     }
-        }
+
+
+
+}
 
 
 
