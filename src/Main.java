@@ -34,21 +34,43 @@ public class Main {
         Truck truck1 = new Truck("Kamaz", "6511", 3.0, driverC1, LoadCapacity.N1, mechanics);
         Truck truck2 = new Truck("Gaz", "3308", 3.0, driverC2, LoadCapacity.N3, mechanics);
         Truck truck3 = new Truck("Nefaz", "4514", 3.0, driverC3, LoadCapacity.N2, mechanics);
+        List<Driver> drivers = new ArrayList<>();
+        drivers.add(driverB1);
+        drivers.add(driverB2);
+        drivers.add(driverB3);
+        drivers.add(driverC1);
+        drivers.add(driverC2);
+        drivers.add(driverC3);
+        drivers.add(driverD1);
+        drivers.add(driverD2);
+        drivers.add(driverD3);
+        Map<Transport, Mechanic> carAndMechanic = new HashMap<>();
+        carAndMechanic.put(car1, mechanic1);
+        carAndMechanic.put(car2, mechanic2);
+        carAndMechanic.put(car3, mechanic3);
+        carAndMechanic.put(bus1, mechanic1);
+        carAndMechanic.put(bus2, mechanic2);
+        carAndMechanic.put(bus3, mechanic3);
+        carAndMechanic.put(truck1, mechanic1);
+        carAndMechanic.put(truck2, mechanic2);
+        carAndMechanic.put(truck3, mechanic3);
 
-            List<Transport> carList = new ArrayList<>();
-            carList.add(car1);
-            carList.add(car2);
-            carList.add(car3);
-            carList.add(bus1);
-            carList.add(bus2);
-            carList.add(bus3);
-            carList.add(truck1);
-            carList.add(truck2);
-            carList.add(truck3);
-
-
+        for (Map.Entry<Transport, Mechanic> transportMechanicEntry : carAndMechanic.entrySet()) {
+            System.out.println("Автомобиль: " + transportMechanicEntry.getKey() + " Механик:" + transportMechanicEntry.getValue());
         }
+        Set<Driver> driverSet = new HashSet<>();
+        for(Driver driver : drivers){
+            driverSet.add(driver);
         }
+        Iterator <Driver> iterator = driverSet.iterator();
+        while (iterator.hasNext());
+        Driver driver = iterator.next();
+        System.out.println(driver);
+    }
+
+
+
+}
 
 
 

@@ -29,10 +29,7 @@ public class Bus extends Transport <DriverD> {
         return super.toString();
     }
 
-    @Override
-    public void runCheckUp() throws TransportTypeException {
 
-    }
 
     @Override
     public  void startMove(){
@@ -66,10 +63,7 @@ public class Bus extends Transport <DriverD> {
 
     }
 
-    @Override
-    boolean passDiagnostics() throws TransportTypeException {
-        return false;
-    }
+
     @Override
     public boolean needGoDiagnostic () {
         return false;
